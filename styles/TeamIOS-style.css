@@ -5,14 +5,14 @@
 }
 @font-face {
     font-family: 'CabinetGrotesk';
-    src: url('assets/fonts/Display/CabinetGrotesk-Extrabold.otf') format(OpenType);
+    src: url('../assets/fonts/Display/CabinetGrotesk-Extrabold.otf') format(OpenType);
     font-weight: 800;
     font-style: normal;
 }
 
 @font-face {
     font-family: 'Rubik';
-    src: url('assets/fonts/Body/Rubik-Regular.ttf') format(truetype);
+    src: url('../assets/fonts/Body/Rubik-Regular.ttf') format(truetype);
     font-weight: normal;
     font-style: normal;
 }
@@ -47,46 +47,44 @@ header{
     justify-content: space-between;
     align-items: center;
     padding: 1rem 1.5rem;
-}
 
-.triple-logo img{
-    width: 100px;
-    height: auto;
-}
+    & .triple-logo img{
+        width: 100px;
+        height: auto;
+    }
 
-.menu{
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
+    & .menu{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
 
-.menu-item{
-    margin-left: 5rem;
-}
+    &  .menu-item{
+        margin-left: 5rem;
+        list-style: none;
 
-
-li{
-    list-style: none;
-}
-
-a{
-    text-decoration: none;
-    color: var(--midnight);
+        & a {
+            text-decoration: none;
+            color: var(--midnight);
+        }
+    }
+    
 }
 
 .hambrgr{
     display: none;
+
+    & .bar{
+        display: block;
+        width: 25px;
+        height: 3px;
+        margin: 5px auto;
+        --webkit-transition: all 0.3s ease-in-out;
+        transition: all 0.3s ease-in-out;
+        background-color: var(--midnight);
+    }
 }
 
-.bar{
-    display: block;
-    width: 25px;
-    height: 3px;
-    margin: 5px auto;
-    --webkit-transition: all 0.3s ease-in-out;
-    transition: all 0.3s ease-in-out;
-    background-color: var(--midnight);
-}
 .hambrgr.active .bar:nth-child(1) {
     transform: translateY(8px) rotate(45deg);
 }
@@ -97,12 +95,6 @@ a{
 
 .hambrgr.active .bar:nth-child(3) {
     transform: translateY(-8px) rotate(-45deg);
-}
-
-.menu-list {
-    list-style: none;
-    display: flex;
-    gap: 20px;
 }
 
 @media (max-width: 1000px) {
@@ -138,36 +130,38 @@ a{
     width: 100vw;
     background: var(--midnight);
     overflow: hidden;
-}
 
-.hero img{
-object-fit: cover;
-opacity: 0.4;
-}
+    & img{
+        object-fit: cover;
+        opacity: 0.4;
+        }
 
-.hero-text{
-  position: absolute;
-  top: 50%;
-  left: 20%;
-}
+    & .hero-text{
+      position: absolute;
+      top: 50%;
+      left: 20%;
 
-.hero-text p{
-    font-size: 20px;
-    color: var(--red);
-}
+      & p {
+        font-size: 20px;
+        color: var(--red);
+      }
 
-.hero-text h1{
-    font-size: 60px;
-    color: var(--white);
+      & h1 {
+        font-size: 60px;
+        color: var(--white);
+      }
+    }
+
 }
 
 .about{
     padding: 4rem;
+
+    & p {
+        padding-top: 1rem;
+    }
 }
 
-.about p{
-    padding-top: 1rem;
-}
 
 footer{
     background-color: var(--midnight);
@@ -176,25 +170,26 @@ footer{
     justify-content: space-between;
     align-items: center;
     padding: 1rem 1.5rem;
-}
 
-footer img{
-    width: 100px;
-    height: auto;
-}
-footer ul{
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
+    & img{
+        width: 100px;
+        height: auto;
+    }
 
-footer li{
-    list-style: none;
-}
+    & ul{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
 
-footer a{
-    text-decoration: none;
-    color: var(--white);
+    & li {
+        list-style: none;
+    }
+
+    & a{
+        text-decoration: none;
+        color: var(--white);
+    }
 }
 
 @media (max-width: 1000px) {
@@ -212,31 +207,28 @@ footer a{
     display: flex;
     justify-content: space-around;
     flex-wrap: wrap;
+
+    & .team-member {
+        text-align: center;
+        margin-bottom: 20px;
+    }
+
+    & .image-container {
+        background-color: var(--daylight);
+        width: 150px;
+        height: 150px;
+        border-radius: 50%;
+        overflow: hidden;
+        margin: 0 auto 10px;
+    } 
+
+    & .image-container img {
+        width: 100%;
+        height: 100%;
+        padding: 1rem;
+        object-fit: cover;
+    }
 }
-
-.team-member {
-    text-align: center;
-    margin-bottom: 20px;
-}
-
-.image-container {
-    background-color: var(--daylight);
-    width: 150px;
-    height: 150px;
-    border-radius: 50%;
-    overflow: hidden;
-    margin: 0 auto 10px;
-}
-
-.image-container img {
-    width: 100%;
-    height: 100%;
-    padding: 1rem;
-    object-fit: cover;
-
-}
-
-/* Add any other styles you need for the section */
 
 @media only screen and (max-width: 600px) {
     .team-member {
