@@ -2,6 +2,7 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    line-height: 1.15;
 }
 @font-face {
     font-family: 'CabinetGrotesk';
@@ -20,8 +21,13 @@
 :root {
 
     /*fonts*/
-    --headings: 'CabinetGrotesk';
-    --paragraphs: 'Rubik';
+        /*family*/
+        --headings: 'CabinetGrotesk';
+        --paragraphs: 'Rubik';
+        /*size*/
+        --h1: 2.75rem;
+        --p: 1.125rem;
+        --small-label: .875rem;
 
     /*colors*/
         /*primary*/
@@ -29,40 +35,50 @@
         --red: #FF4F68;
         --white: #fff;
         --daylight: #EDF6FF;
+
+    /*margins en paddings*/
+        /*in sections*/
+        --padding-sect-top: 2.8rem;
+        --padding-sect-bottom: 2.5rem;
+        --padding-left-right: 1.5rem;
+        --menu-padding: 6.375rem 1.5rem 0;
+        /*widths*/
+        --full-width: 100px;
 }
 
 h1{
     font-family: var(--headings);
-    font-size: 2rem;
+    font-size: var(--h1);
 }
 
 p{
     font-family: var(--paragraphs);
+    font-size: var(--p);
 }
 
 
 header{
     font-family: var(--paragraphs);
+   /*hier zorg ik ervoor dat de nav op een rijtje komt*/
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 1rem 1.5rem;
+    padding: var(--padding-left-right);
 
 
 
     & .triple-logo img{
-        width: 100px;
+        width: var(--full-width);
         height: auto;
     }
 
     & .menu{
         display: flex;
-        justify-content: space-between;
-        align-items: center;
     }
 
     &  .menu-item{
-        margin-left: 5rem;
+        /*hier zorg ik voor ruimte tussen de verschillende navigatie links*/
+        margin-left: var(--padding-left-right);
         list-style: none;
 
         & a {
@@ -81,6 +97,7 @@ header{
         width: 25px;
         height: 3px;
         margin: 5px auto;
+        /*dit bepaalt hoe snel het kruisje veranderd in de hamburger menu en andersom*/
         --webkit-transition: all 0.3s ease-in-out;
         transition: all 0.3s ease-in-out;
         background-color: var(--midnight);
@@ -91,33 +108,38 @@ header{
     transform: translateY(8px) rotate(45deg);
 }
 
+/*ik zorg ervoor dat als de hamburger open is, 
+de tweede lijn niet zichtbaar is*/
 .hambrgr.active .bar:nth-child(2) {
     opacity: 0;
 }
 
+/*de andere lijnen draai ik zodat het een afsluit kruis vormt.*/
 .hambrgr.active .bar:nth-child(3) {
     transform: translateY(-8px) rotate(-45deg);
 }
 
 @media (max-width: 1000px) {
     .menu {
-        position: fixed;
-        left: -100%;
+        position: absolute;
+        /*dit zorgt ervoor dat het menu vanuit rechts komt*/
+        right: -100%;
         top: 5rem;
         flex-direction: column;
         background-color: #fff;
         width: 100%;
-        text-align: center;
-        transition: 0.3s;
+        /*hier bepaal ik hoe snel het menu open en dicht gaat*/
+        transition: 0.5s;
         z-index: 2;
+        padding: var(--menu-padding: 6.375rem 1.5rem 0);
        
     }
     .menu.active {
-        left: 0;
+        right: 0;
     }
     
     .menu-item {
-        margin: 2.5rem 0;
+        margin: 1.5rem 0;
     }
 
     .hambrgr {
@@ -133,8 +155,10 @@ header{
     overflow: hidden;
 
     & img{
+        /*dit zorgt ervoor dat de hele afbeelding te zien is en centraal is*/
         object-fit: cover;
         opacity: 0.4;
+        object-position: 0px -200px;
         }
 
     & .hero-text{
@@ -143,12 +167,10 @@ header{
       left: 20%;
 
       & p {
-        font-size: 20px;
         color: var(--red);
       }
 
       & h1 {
-        font-size: 60px;
         color: var(--white);
       }
     }
@@ -173,7 +195,7 @@ footer{
     padding: 1rem 1.5rem;
 
     & img{
-        width: 100px;
+        width: var(--full-width);
         height: auto;
     }
 
