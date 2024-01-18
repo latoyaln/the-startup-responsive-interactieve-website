@@ -85,6 +85,10 @@ header{
             text-decoration: none;
             color: var(--midnight);
         }
+
+       & a:hover{
+            color: var(--red);
+        }
     }
     
 }
@@ -121,7 +125,8 @@ de tweede lijn niet zichtbaar is*/
 
 @media (max-width: 1000px) {
     .menu {
-        position: absolute;
+        overflow:hidden;
+        position: fixed;
         /*dit zorgt ervoor dat het menu vanuit rechts komt*/
         right: -100%;
         top: 5rem;
@@ -129,7 +134,7 @@ de tweede lijn niet zichtbaar is*/
         background-color: #fff;
         width: 100%;
         /*hier bepaal ik hoe snel het menu open en dicht gaat*/
-        transition: 0.5s;
+        transition: 0.4s;
         z-index: 2;
         padding: var(--menu-padding: 6.375rem 1.5rem 0);
        
@@ -203,6 +208,8 @@ footer{
         display: flex;
         justify-content: space-between;
         align-items: center;
+        padding-top: 1rem;
+        padding-bottom: 1rem;
     }
 
     & li {
@@ -212,6 +219,44 @@ footer{
     & a{
         text-decoration: none;
         color: var(--white);
+    }
+    & .footer-p{
+        color: var(--red);
+        padding-top: 1rem;
+    }
+    & .footer-intro-title {
+        color: var(--white);
+    }
+
+    & .footer-intro-title strong{
+        color: transparent;
+        -webkit-text-stroke: 0.0625rem var(--white);
+        padding-bottom: 
+    }
+
+    & .footer-intro-p{
+        color: var(--white);
+        font-size: var( --small-label);
+        padding-bottom: 1rem;
+        padding-top: 1rem;
+        max-width: 40ch
+    }
+
+    & button{
+        font-size: var(--p);
+        display: inline-flex;
+        justify-content: center;
+        align-items: center;
+        position: relative;
+        color: var(--white);
+        box-shadow: 0.1875rem -0.125rem var(--white);
+        background-color: var(--midnight);
+        padding: 0.8125rem var(--padding-left-right);
+        border: 0.0625rem solid var(--white);
+        border-radius: 0.1875rem;
+        outline: none;
+        overflow: hidden;
+        transition: box-shadow .2s,transform .2s;
     }
 }
 
