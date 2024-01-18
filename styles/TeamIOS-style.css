@@ -125,7 +125,7 @@ de tweede lijn niet zichtbaar is*/
 
 @media (max-width: 1000px) {
     .menu {
-        overflow:hidden;
+        overflow: hidden;
         position: fixed;
         /*dit zorgt ervoor dat het menu vanuit rechts komt*/
         right: -100%;
