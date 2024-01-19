@@ -242,7 +242,7 @@ footer{
         max-width: 40ch
     }
 
-    & button{
+    & .contact-button{
         font-size: var(--p);
         display: inline-flex;
         justify-content: center;
