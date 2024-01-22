@@ -22,8 +22,8 @@
 
     /*fonts*/
         /*family*/
-        --headings: 'CabinetGrotesk';
-        --paragraphs: 'Rubik';
+        --headings: 'CabinetGrotesk', 'Rubik', 'Helvetica', Sans-Serif;
+        --paragraphs: 'Rubik', 'CabinetGrotesk', 'Helvetica', sans-serif;
         /*size*/
         --h1: 2.75rem;
         --p: 1.125rem;
@@ -56,7 +56,6 @@ p{
     font-size: var(--p);
 }
 
-
 nav{
     font-family: var(--paragraphs);
    /*hier zorg ik ervoor dat de nav op een rijtje komt*/
@@ -64,8 +63,6 @@ nav{
     justify-content: space-between;
     align-items: center;
     padding: var(--padding-left-right);
-
-
 
     & .triple-logo img{
         width: var(--full-width);
@@ -90,7 +87,6 @@ nav{
             color: var(--red);
         }
     }
-    
 }
 
 .hambrgr{
