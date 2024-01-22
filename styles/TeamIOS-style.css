@@ -57,7 +57,7 @@ p{
 }
 
 
-header{
+nav{
     font-family: var(--paragraphs);
    /*hier zorg ik ervoor dat de nav op een rijtje komt*/
     display: flex;
