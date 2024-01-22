@@ -46,7 +46,7 @@
         --full-width: 100px;
 }
 
-h1{
+h1, h2, h3{
     font-family: var(--headings);
     font-size: var(--h1);
 }
@@ -176,7 +176,6 @@ de tweede lijn niet zichtbaar is*/
         color: var(--white);
       }
     }
-
 }
 
 .about{
@@ -186,7 +185,6 @@ de tweede lijn niet zichtbaar is*/
         padding-top: 1rem;
     }
 }
-
 
 footer{
     background-color: var(--midnight);
@@ -223,12 +221,14 @@ footer{
     }
     & .footer-intro-title {
         color: var(--white);
+        display: block;
+        font-size: 4rem;
+        max-width: 11ch;
     }
 
     & .footer-intro-title strong{
         color: transparent;
         -webkit-text-stroke: 0.0625rem var(--white);
-        padding-bottom: 
     }
 
     & .footer-intro-p{
