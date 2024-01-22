@@ -141,6 +141,7 @@ de tweede lijn niet zichtbaar is*/
     }
     .menu.active {
         right: 0;
+        position: absolute;
     }
     
     .menu-item {
