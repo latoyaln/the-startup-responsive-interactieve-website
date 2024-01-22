@@ -163,26 +163,28 @@ de tweede lijn niet zichtbaar is*/
         object-position: 0px -200px;
         }
 
-    & .hero-text{
-      position: absolute;
-      top: 50%;
-      left: 20%;
-
       & p {
         color: var(--red);
+        position: absolute;
+        top: 46%;
+        left: 20%;
       }
 
-      & h1 {
+      & h2 {
         color: var(--white);
+        position: absolute;
+        top: 50%;
+        left: 20%;
       }
-    }
 }
 
 .about{
+    width: 100%;
     padding: 4rem;
 
     & p {
         padding-top: 1rem;
+        max-width: 65ch;
     }
 }
 
@@ -272,11 +274,6 @@ footer{
     display: flex;
     justify-content: space-around;
     flex-wrap: wrap;
-
-    & .team-member {
-        text-align: center;
-        margin-bottom: 20px;
-    }
 
     & .image-container {
         background-color: var(--daylight);
