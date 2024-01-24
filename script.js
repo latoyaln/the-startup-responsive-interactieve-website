@@ -1,47 +1,50 @@
+// Hamburger function - toggle menu visibility and update accessibility attributes
 document.addEventListener('DOMContentLoaded', function () {
     const hambrgr = document.querySelector('.hambrgr');
     const menu = document.querySelector('.menu');
 
     hambrgr.addEventListener('click', function () {
+        // Toggle the 'active' class on the menu and hamburger elements
         menu.classList.toggle('active');
         hambrgr.classList.toggle('active');
+        // Check if the menu is active and update aria attributes accordingly
         const isActive = menu.classList.contains('active');
         hambrgr.setAttribute('aria-expanded', isActive);
         hambrgr.setAttribute('aria-label', isActive ? 'Close Menu' : 'Open Menu');
     });
 });
 
-// Selecteer het element met de attribuut "data-slider"
+// Select the element with the attribute "data-slider"
 const slider = document.querySelector("[data-slider]");
 
-// Selecteer specifieke elementen binnen de slider met behulp van hun data-attributen
+// Select specific elements within the slider using their data attributes
 const track = slider.querySelector("[data-slider-track]");
 const prev = slider.querySelector("[data-slider-prev]");
 const next = slider.querySelector("[data-slider-next]");
 
-// Controleer of het "track" element bestaat
+// Check if the "track" element exists
 if (track) {
-  // Voeg een klikgebeurtenisluisteraar toe aan de "prev" knop
-  prev.addEventListener("click", () => {
-    // Verwijder het "disabled" attribuut van de "next" knop
-    next.removeAttribute("disabled");
+    // Add a click event listener to the "prev" button
+    prev.addEventListener("click", () => {
+        // Remove the "disabled" attribute from the "next" button
+        next.removeAttribute("disabled");
 
-    // Scroll het "track" element naar links met de breedte van het eerste kind, met soepele beweging
-    track.scrollTo({
-      left: track.scrollLeft - track.firstElementChild.offsetWidth,
-      behavior: "smooth"
+        // Scroll the "track" element to the left by the width of the first child, with smooth motion
+        track.scrollTo({
+            left: track.scrollLeft - track.firstElementChild.offsetWidth,
+            behavior: "smooth"
+        });
     });
-  });
 
-  // Voeg een klikgebeurtenisluisteraar toe aan de "next" knop
-  next.addEventListener("click", () => {
-    // Verwijder het "disabled" attribuut van de "prev" knop
-    prev.removeAttribute("disabled");
+    // Add a click event listener to the "next" button
+    next.addEventListener("click", () => {
+        // Remove the "disabled" attribute from the "prev" button
+        prev.removeAttribute("disabled");
 
-    // Scroll het "track" element naar links met de breedte van het eerste kind, met soepele beweging
-    track.scrollTo({
-      left: track.scrollLeft + track.firstElementChild.offsetWidth,
-      behavior: "smooth"
+        // Scroll the "track" element to the left by the width of the first child, with smooth motion
+        track.scrollTo({
+            left: track.scrollLeft + track.firstElementChild.offsetWidth,
+            behavior: "smooth"
+        });
     });
-  });
 }

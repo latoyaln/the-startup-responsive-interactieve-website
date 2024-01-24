@@ -26,6 +26,7 @@
         --paragraphs: 'Rubik', 'CabinetGrotesk', 'Helvetica', sans-serif;
         /*size*/
         --h1: 2.75rem;
+        --h2: 2rem;
         --p: 1.125rem;
         --small-label: .875rem;
 
@@ -38,17 +39,28 @@
 
     /*margins en paddings*/
         /*in sections*/
-        --padding-sect-top: 2.8rem;
-        --padding-sect-bottom: 2.5rem;
-        --padding-left-right: 1.5rem;
+        --section-top: 2.8rem;
+        --section-bottom: 2.5rem;
+        --left-right: 1.5rem;
         --menu-padding: 6.375rem 1.5rem 0;
+
+        --padding-1: 1rem;
         /*widths*/
-        --full-width: 100px;
+        --full-width-logo: 100px;
+        --full-width-procent: 100%;
+        
 }
 
 h1, h2, h3{
     font-family: var(--headings);
+}
+
+h1{
     font-size: var(--h1);
+}
+
+h2{
+    font-size: var(--h2)
 }
 
 p{
@@ -56,16 +68,17 @@ p{
     font-size: var(--p);
 }
 
+/*Start Nav styling*/
 nav{
     font-family: var(--paragraphs);
    /*hier zorg ik ervoor dat de nav op een rijtje komt*/
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: var(--padding-left-right);
+    padding: var(--left-right);
 
     & .triple-logo img{
-        width: var(--full-width);
+        width: var(--full-width-logo);
         height: auto;
     }
 
@@ -75,7 +88,7 @@ nav{
 
     &  .menu-item{
         /*hier zorg ik voor ruimte tussen de verschillende navigatie links*/
-        margin-left: var(--padding-left-right);
+        margin-left: var(--left-right);
         list-style: none;
 
         & a {
@@ -104,7 +117,7 @@ nav{
         width: 25px;
         height: 3px;
         margin: 5px auto;
-        /*dit bepaalt hoe snel het kruisje veranderd in de hamburger menu en andersom*/
+        /*this determines how quickly the cross changes in the hamburger menu and vice versa*/
         --webkit-transition: all 0.3s ease-in-out;
         transition: all 0.3s ease-in-out;
         background-color: var(--midnight);
@@ -115,13 +128,13 @@ nav{
     transform: translateY(8px) rotate(45deg);
 }
 
-/*ik zorg ervoor dat als de hamburger open is, 
-de tweede lijn niet zichtbaar is*/
+/*I make sure that when the hamburger is open,
+the second line is not visible*/
 .hambrgr.active .bar:nth-child(2) {
     opacity: 0;
 }
 
-/*de andere lijnen draai ik zodat het een afsluit kruis vormt.*/
+/*I rotate the other lines so that they form a closing cross.*/
 .hambrgr.active .bar:nth-child(3) {
     transform: translateY(-8px) rotate(-45deg);
 }
@@ -130,13 +143,13 @@ de tweede lijn niet zichtbaar is*/
     .menu {
         overflow: hidden;
         position: fixed;
-        /*dit zorgt ervoor dat het menu vanuit rechts komt*/
+        /*makes sure menu comes from the right*/
         right: -100%;
         top: 5rem;
         flex-direction: column;
         background-color: #fff;
-        width: 100%;
-        /*hier bepaal ik hoe snel het menu open en dicht gaat*/
+        width: var(--full-width-procent);
+        /*decides how fast menu opens and closes*/
         transition: 0.4s;
         z-index: 2;
         padding: var(--menu-padding: 6.375rem 1.5rem 0);
@@ -156,18 +169,19 @@ de tweede lijn niet zichtbaar is*/
         cursor: pointer;
     }
 }
+/*End Nav styling*/
 
+/*Start Hero styling*/
 .hero{
     height: 400px;
-    width: 100%;
+    width: var(--full-width-procent);
     background: var(--midnight);
     overflow: hidden;
 
     & img{
-        /*dit zorgt ervoor dat de hele afbeelding te zien is en centraal is*/
-        opacity: 0.4;
-        scale: transform(2);
-        height: auto;
+        opacity: 0.3;
+        height: var(--full-width-procent);
+        width: auto;
     }
 
       & p {
@@ -182,36 +196,158 @@ de tweede lijn niet zichtbaar is*/
         position: absolute;
         top: 50%;
         left: 20%;
+        font-size: var(--h1);
       }
 }
 @media (min-width:500px){
     .hero img{
-        min-width: 100vw;
-        object-fit: cover;
+        width:100vw;
         height: auto;
     }
 }
+/*End Hero styling*/
 
-.about{
-    width: 100%;
+/*Start About styling*/
+  .about-container{
+    min-width:100vw;
+    padding: var(--section-bottom);
+
+    & .about {
+        margin-bottom: 4rem;
+         
+        & p {
+            padding-top: var(--padding-1);
+            max-width: 65ch;
+        }
+      }
+
+    &  .image-gallery {
+        display: flex;
+        flex-wrap: wrap;
+        height: 50%;
+        width: auto; 
+
+        & img{
+            width: var(--full-width-procent); 
+            margin-bottom: 10px;
+        }
+      }
+  }
+  
+  @media screen and (min-width: 1000px) {
+    .about-container {
+        display: grid; 
+        grid-template-columns: 1fr 1fr; 
+        grid-gap: 20px; 
+        width: 50%; 
+    }
+  
+    .image-gallery {
+      height: 50%;
+      width: auto; 
+    }
+  
+    .image-gallery img {
+      width: 50%;
+      display: flex;
+      padding-left: var(--left-right);
+      height: auto;
+    }
+  }
+/*End About styling*/
+  
+/*Start Slider styling*/
+.slider {
+    overflow: hidden;
     padding: 4rem;
 
-    & p {
-        padding-top: 1rem;
-        max-width: 65ch;
+   & .slider-button {
+	background: var(--white);
+    border: 3px solid var(--midnight);
+    width: 50px;
+    height: 50px;
+    cursor: pointer;
+    border-radius: 4px;
+    margin: var(--padding-1);
+
+        &:hover{
+            border: 3px solid var(--red);
+            color: #45f882;
+        }
     }
+    
+    & .slide {
+        display: block;
+        align-items: center;
+        aspect-ratio: 1/1;
+        border-radius: 10px;
+        padding: 3px;
+        margin: 0.5rem; /*space between slides*/
+        min-width: 15rem;
+        scroll-snap-align: start;
+        scroll-snap-stop: always;
+        padding-right: var(--slider-column-gap);
+
+        & .slideimg {
+            width: var(--full-width-procent);
+            height: auto;
+            border-radius: 10px;
+       }
+       & .slide-content {
+           position: relative;
+           background-color: #fff;
+           width: var(--full-width-procent);
+           padding: 0 1.5rem 0 1.5rem; 
+
+           & h2{
+            font-size: .5rem;
+            color: 
+           }
+       }    
+    }
+    
 }
 
+.slide:hover {
+    border: 3px solid var(--red);
+}
+
+.slider-track {
+  display: flex;
+  overflow-x: auto;
+  -ms-scroll-snap-type: x mandatory;
+      scroll-snap-type: x mandatory;
+  padding-inline: var(--slider-padding);
+  scroll-behavior: smooth;
+  list-style-type: none;
+  padding: 0;
+  margin-right: calc(--var(slider-column-gap) * -1);
+  scrollbar-width: none;
+}
+
+
+.slider-track::-webkit-scrollbar {
+  display: none;
+}
+
+@media (min-width:1100px){
+    .slider-button {
+        display: none; /*hide buttons when display is min 1100px*/
+    }
+}
+/*End Slider styling*/
+
+/*Start Footer styling*/
 footer{
     background-color: var(--midnight);
     font-family: var(--paragraphs);
     display: block;
     justify-content: space-between;
     align-items: center;
-    padding: 1rem 1.5rem;
+    padding: var(--padding-1);
 
     & img{
-        width: var(--full-width);
+        width: var(--full-width-logo);
         height: auto;
     }
 
@@ -219,10 +355,9 @@ footer{
         display: block;
         justify-content: space-between;
         align-items: center;
-        padding-top: 1rem;
-        padding-bottom: 1rem;
+        padding: var(--padding-1) 0;
     }
-    
+
     &  ul.socials {
         display: flex;
     }
@@ -238,7 +373,7 @@ footer{
     }
     & .footer-p{
         color: var(--red);
-        padding-top: 1rem;
+        padding: var(--padding-1);
     }
     & .footer-intro-title {
         color: var(--white);
@@ -255,9 +390,8 @@ footer{
     & .footer-intro-p{
         color: var(--white);
         font-size: var( --small-label);
-        padding-bottom: 1rem;
-        padding-top: 1rem;
-        max-width: 40ch
+        padding: var(--padding-1) 0;
+        max-width: 40ch;
     }
 
     & .contact-button{
@@ -288,86 +422,4 @@ footer{
     }
     
 }
-
-.slider {
-    --slider-padding: 1rem;
-    --slider-column-gap: 1rem;
-    --slide-width: 30%;
-    --slide-min-width: 20rem;
-    position: relative;
-    overflow: hidden;
-    padding: 4rem;
-
-   & .slider-button {
-	background: var(--white);
-    border: 3px solid var(--midnight);
-    width: 50px;
-    height: 50px;
-    cursor: pointer;
-    border-radius: 4px;
-    margin: 1rem;
-
-        &:hover{
-            border: 3px solid #45f882;
-            color: #45f882;
-        }
-    }
-
-    & .slide {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        width: 100%;
-        aspect-ratio: 1/1;
-        position: relative;
-        border: 3px solid #383c4e;
-        border-radius: 10px;
-        padding: 3px;
-        margin: 2rem;
-
-        & .slideimg {
-            width: 100%;
-            height: auto;
-            border-radius: 10px;
-       }
-
-       & .slide-content {
-           position: absolute;
-           font-size: 1rem;
-           background-color: #fff;
-           bottom: 30px;
-           width: 100%;
-           padding: 0 30px 0 30px; 
-       }    
-    }
-    
-}
-
-.slide:hover {
-    border: 3px solid #45f882;
-}
-
-.slider-track {
-  display: flex;
-  overflow-x: auto;
-  -ms-scroll-snap-type: x mandatory;
-      scroll-snap-type: x mandatory;
-  padding-inline: var(--slider-padding);
-  scroll-behavior: smooth;
-  list-style-type: none;
-  padding: 0;
-  margin-right: calc(--var(slider-column-gap) * -1);
-  scrollbar-width: none;
-}
-
-.slider-track > * {
-  flex: 0 0 var(--slide-width);
-  min-width: var(--slide-min-width);
-  scroll-snap-align: start;
-  scroll-snap-stop: always;
-  padding-right: var(--slider-column-gap);
-}
-
-.slider-track::-webkit-scrollbar {
-  display: none;
-}
+/*End Footer styling*/
