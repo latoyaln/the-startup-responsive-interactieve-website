@@ -159,15 +159,15 @@ de tweede lijn niet zichtbaar is*/
 
 .hero{
     height: 400px;
-    width: 100vw;
+    width: 100%;
     background: var(--midnight);
     overflow: hidden;
 
     & img{
         /*dit zorgt ervoor dat de hele afbeelding te zien is en centraal is*/
-        object-fit: cover;
         opacity: 0.4;
-        width: 100vw;
+        scale: transform(2);
+        height: auto;
     }
 
       & p {
@@ -183,6 +183,13 @@ de tweede lijn niet zichtbaar is*/
         top: 50%;
         left: 20%;
       }
+}
+@media (min-width:500px){
+    .hero img{
+        min-width: 100vw;
+        object-fit: cover;
+        height: auto;
+    }
 }
 
 .about{

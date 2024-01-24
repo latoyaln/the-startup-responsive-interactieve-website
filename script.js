@@ -44,25 +44,4 @@ if (track) {
       behavior: "smooth"
     });
   });
-
-  // Voeg een scrollgebeurtenisluisteraar toe aan het "track" element
-  track.addEventListener("scroll", () => {
-    // Ontvang de totale scrollbare breedte en de buitenste breedte van het "track" element
-    const trackScrollWidth = track.scrollWidth;
-    const trackOuterWidth = track.clientWidth;
-
-    // Verwijder het "disabled" attribuut van beide knoppen
-    prev.removeAttribute("disabled");
-    next.removeAttribute("disabled");
-
-    // Als de scrollpositie aan het begin is, stel het "disabled" attribuut in op de "prev" knop
-    if (track.scrollLeft <= 0) {
-      prev.setAttribute("disabled", "");
-    }
-
-    // Als de scrollpositie aan het einde is, stel het "disabled" attribuut in op de "next" knop
-    if (track.scrollLeft === trackScrollWidth - trackOuterWidth) {
-      next.setAttribute("disabled", "");
-    }
-  });
 }
