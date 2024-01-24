@@ -5,6 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Team IOS</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
     <link rel="stylesheet" href="styles/TeamIOS-style.css">
 </head>
 <body>
@@ -64,19 +65,35 @@
                     </p>
                 </section>
 
-                <section class="team-section">
-                    <h2> Meet the people</h2>
-                        <div class="image-container">
-                            <img src="assets/images/memoji/person1.webp" alt="Person 1">
-                        </div>
-                        <p>firstName lastName</p>
-                        <p>role</p>
-                        <div class="image-container">
-                            <img src="assets/images/memoji/person2.webp" alt="Person 2">
-                        </div>
-                        <p>firstName lastName</p>
-                        <p>role</p>
-                </section>
+                <section class="slider" data-slider>
+                    <h2 class="main_title">The faces</h2>
+                    <button class="slider__button" data-slider-prev disabled>
+                      <i class="fa fa-angle-left"></i>
+                    </button>
+                    <button class="slider__button" data-slider-next>
+                      <i class="fa fa-angle-right"></i>
+                    </button>
+        
+                    <div class="slider__track" data-slider-track>
+                    <article class="slide" data-slider-item>
+                        <img src="assets/images/faces/man1.jpg" class="slideimg" />
+                        <p class="slide_content">Jan pieter</p>  
+                    </article>
+                    
+                    <article class="slide" data-slider-item>
+                        <img src="assets/images/faces/man2.jpg" class="slideimg" />
+                        <p class="slide_content">Max Jett</p>
+                    </article>
+                    <article class="slide" data-slider-item>
+                        <img src="assets/images/faces/vrouw1.jpg" class="slideimg" />
+                        <p class="slide_content">BrimStone</p>
+                    </article>
+                    <article class="slide" data-slider-item>
+                        <img src="assets/images/faces/vrouw2.jpg" class="slideimg" />
+                        <p class="slide_content">Mad Raze</p>
+                    </article>
+                    </div>
+          </section>
         </main>
         <footer>
         
