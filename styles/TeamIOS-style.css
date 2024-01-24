@@ -205,7 +205,7 @@ de tweede lijn niet zichtbaar is*/
 footer{
     background-color: var(--midnight);
     font-family: var(--paragraphs);
-    display: flex;
+    display: block;
     justify-content: space-between;
     align-items: center;
     padding: 1rem 1.5rem;
@@ -215,12 +215,16 @@ footer{
         height: auto;
     }
 
-    & ul{
-        display: flex;
+    & li{
+        display: block;
         justify-content: space-between;
         align-items: center;
         padding-top: 1rem;
         padding-bottom: 1rem;
+    }
+    
+    &  ul.socials {
+        display: flex;
     }
 
     & li {
@@ -274,13 +278,13 @@ footer{
     }
 }
 
-@media (max-width: 1000px) {
+@media (min-width: 1000px) {
 
     footer{
-        display: block;
+        display: flex;
     }
     footer ul{
-        display: block;
+        display: flex;
     }
     
 }
