@@ -168,7 +168,7 @@ de tweede lijn niet zichtbaar is*/
         object-fit: cover;
         opacity: 0.4;
         width: 100vw;
-        }
+    }
 
       & p {
         color: var(--red);
@@ -218,6 +218,7 @@ footer{
 
     & li {
         list-style: none;
+        padding: .5rem;
     }
 
     & a{
