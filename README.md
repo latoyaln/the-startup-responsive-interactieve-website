@@ -13,8 +13,8 @@ Minstens 1 concept van de team pagina heb
 Een responsive design heb
 Alles in huisstijl van triple is
 
-<!-- Voeg een mooie poster visual toe 📸 -->
-<!-- Voeg een link toe naar Github Pages 🌐-->
+
+https://latoyaln.github.io/the-startup-responsive-interactieve-website/
 
 ## Kenmerken
 Ik heb de basis van de site opgebouwd met HTML en CSS. Ik maak gebruik van JS voor het hamburger menu en mijn carousel.
