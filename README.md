@@ -1,15 +1,23 @@
-> _Fork_ deze leertaak en ga aan de slag. Onderstaande outline ga je gedurende deze taak in jouw eigen GitHub omgeving uitwerken. De instructie vind je in: [docs/INSTRUCTIONS.md](docs/INSTRUCTIONS.md)
+> Je kan aan deze repository werken door deze te forken. Ook kan je het gemaakte werk bekijken via de github pages link.
 
 # Titel
-<!-- Geef je project een titel en schrijf in één zin wat het is -->
+Een responsive team pagina voor Triple
 
 ## Beschrijving
-<!-- In de Beschrijving staat hoe je project er uit ziet, hoe het werkt en wat je er mee kan. -->
+In deze repository maak ik een responsive team pagina voor Triple waarbij ik gebruik maak van hun huisstijl.
+Het doel van de team pagina is om sollicitanten over de streep te halen om te solliciteren.
+
+Deze repositroy is opgelost als ik:
+
+Minstens 1 concept van de team pagina heb
+Een responsive design heb
+Alles in huisstijl van triple is
+
 <!-- Voeg een mooie poster visual toe 📸 -->
 <!-- Voeg een link toe naar Github Pages 🌐-->
 
 ## Kenmerken
-<!-- Bij Kenmerken staat welke technieken zijn gebruikt en hoe. Wat is de HTML structuur? Wat zijn de belangrijkste dingen in CSS? Wat is er met JS gedaan en hoe? -->
+Ik heb de basis van de site opgebouwd met HTML en CSS. Ik maak gebruik van JS voor het hamburger menu en mijn carousel.
 
 ## Licentie
 

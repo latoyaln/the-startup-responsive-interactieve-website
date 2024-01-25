@@ -203,6 +203,7 @@ the second line is not visible*/
     .hero img{
         width:100vw;
         height: auto;
+        /*object-position: 0px -200px;*/
     }
 }
 /*End Hero styling*/
